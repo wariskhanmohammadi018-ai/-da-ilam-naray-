@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ps" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="د علم نړۍ — د کمپیوټر، Excel، انګلیسي او ټکنالوژۍ ساده پښتو درسونه">
+  <title>د علم نړۍ | زده کړه له صفره</title>
+  <style>
+    :root {
+      --green: #087f5b;
+      --green-dark: #075c45;
+      --mint: #e9f8f1;
+      --ink: #18332b;
+      --muted: #5c716a;
+      --paper: #ffffff;
+      --bg: #f5faf7;
+      --border: #dcebe3;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.9;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, 92%); margin: auto; }
+    header {
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; color: var(--green-dark); }
+    .logo {
+      display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px;
+      color: white; background: var(--green); font-size: 1.35rem;
+    }
+    nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: .93rem; }
+    nav a:hover { color: var(--green); }
+    .hero { padding: 66px 0 54px; background: linear-gradient(135deg, #e7f8ef 0%, #f8fcfa 65%, #e9f5ff 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 34px; }
+    .tag { display: inline-block; background: #d4f1e2; color: var(--green-dark); padding: 4px 13px; border-radius: 999px; font-size: .86rem; font-weight: 700; }
+    h1 { font-size: clamp(2rem, 5vw, 3.45rem); line-height: 1.45; margin: 16px 0; }
+    .hero p { font-size: 1.08rem; color: var(--muted); max-width: 650px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+    .btn { display: inline-block; border: 0; border-radius: 12px; padding: 11px 19px; font: inherit; font-weight: 700; cursor: pointer; transition: .2s; }
+    .btn-primary { color: white; background: var(--green); }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-light { background: white; border: 1px solid var(--border); color: var(--green-dark); }
+    .hero-card { background: white; border: 1px solid var(--border); border-radius: 25px; padding: 24px; box-shadow: 0 18px 50px rgba(18,91,62,.08); }
+    .hero-card .big-icon { font-size: 3.4rem; }
+    .mini-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid #edf3ef; }
+    .mini-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: var(--mint); font-size: 1.3rem; }
+    section { padding: 56px 0; }
+    .section-head { margin-bottom: 25px; }
+    .section-head h2 { font-size: clamp(1.55rem, 3vw, 2.15rem); margin: 0 0 6px; }
+    .section-head p { margin: 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--paper); border: 1px solid var(--border); border-radius: 18px; padding: 22px; }
+    .card .icon { font-size: 2rem; }
+    .card h3 { margin: 9px 0 5px; font-size: 1.15rem; }
+    .card p { margin: 0 0 15px; color: var(--muted); font-size: .95rem; }
+    .text-link { color: var(--green); font-weight: 800; }
+    .lesson { background: white; }
+    .lesson-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    .code {
+      direction: ltr; text-align: left; white-space: pre-wrap; background: #10251e; color: #d8f6e8;
+      padding: 20px; border-radius: 16px; overflow-wrap: anywhere; font: 14px/1.8 Consolas, monospace;
+    }
+    .note { background: var(--mint); border: 1px solid #c9ead8; border-radius: 16px; padding: 20px; }
+    .note h3 { margin-top: 0; }
+    .note ol { padding-right: 22px; }
+    .contact { background: #eaf7f0; }
+    .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer { background: #10392c; color: #e6f6ed; padding: 22px 0; font-size: .9rem; }
+    footer .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .small { color: var(--muted); font-size: .86rem; }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      nav { gap: 13px; }
+      .hero { padding: 42px 0; }
+      .hero-grid, .lesson-box { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 42px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="logo">📚</span><span>د علم نړۍ</span></a>
+      <nav aria-label="اصلي مینو">
+        <a href="#home">کور</a>
+        <a href="#courses">درسونه</a>
+        <a href="#html">عملي تمرین</a>
+        <a href="#about">زموږ په اړه</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag">زده کړه له صفره</span>
+          <h1>پوهه زده کړه، خپل راتلونکی روښانه کړه</h1>
+          <p>د «د علم نړۍ» تعلیمي ویب‌سایټ ته ښه راغلاست! دلته به کمپیوټر، Microsoft Excel، انګلیسي او نوې ټکنالوژي په ساده پښتو زده کوې.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#courses">درسونه وګوره</a>
+            <a class="btn btn-light" href="#html">لومړی تمرین پیل کړه</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="big-icon">💡</div>
+          <h2>هره ورځ یو نوی مهارت</h2>
+          <p class="small">لږ تمرین، دوامداره زده کړه، او عملي پرمختګ.</p>
+          <div class="mini-row"><span class="mini-icon">💻</span><div><strong>کمپیوټر</strong><br><span class="small">له بنسټه تر عملي کاره</span></div></div>
+          <div class="mini-row"><span class="mini-icon">📊</span><div><strong>Excel</strong><br><span class="small">فورمولونه او د دفتر کارونه</span></div></div>
+          <div class="mini-row"><span class="mini-icon">🌐</span><div><strong>ویب‌سایټ جوړول</strong><br><span class="small">HTML، CSS او JavaScript</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-head">
+          <h2>زموږ تعلیمي برخې</h2>
+          <p>هغه مهارت غوره کړه چې غواړې زده یې کړې.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>د HTML، CSS او JavaScript په مرسته د ویب‌پاڼو جوړول زده کړه.</p>
+            <a class="text-link" href="#html">درس پیل کړه ←</a>
+          </article>
+          <article class="card">
+            <div class="icon">📊</div>
+            <h3>Microsoft Excel</h3>
+            <p>د SUM فورمول، جدولونو، محاسبو او اداري کارونو بنسټونه زده کړه.</p>
+            <a class="text-link" href="#contact">د Excel درسونه ژر راځي ←</a>
+          </article>
+          <article class="card">
+            <div class="icon">🔤</div>
+            <h3>انګلیسي ژبه</h3>
+            <p>له ساده کلمو او جملو څخه پیل او هره ورځ تمرین وکړه.</p>
+            <a class="text-link" href="#contact">د انګلیسي درسونه ژر راځي ←</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson" id="html">
+      <div class="container">
+        <div class="section-head">
+          <h2>لومړی عملي درس: HTML</h2>
+          <p>HTML د ویب‌پاڼې جوړښت برابروي.</p>
+        </div>
+        <div class="lesson-box">
+          <div>
+            <h3>دا کوډ څه کوي؟</h3>
+            <p>دا کوډ په پاڼه کې یو سرلیک او یوه جمله ښکاره کوي. د کوډ په بدلولو سره د خپلې خوښې لیکنې ورزیاتولی شې.</p>
+            <div class="note">
+              <h3>د زده‌کړې درې ګامونه</h3>
+              <ol>
+                <li>کوډ په دقت ولوله.</li>
+                <li>د <code>د علم نړۍ</code> متن په خپل نوم یا خوښې موضوع بدل کړه.</li>
+                <li>په HTML editor کې یې وازمویه.</li>
+              </ol>
+            </div>
+          </div>
+          <pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang="ps" dir="rtl"&gt;
+&lt;body&gt;
+  &lt;h1&gt;د علم نړۍ&lt;/h1&gt;
+  &lt;p&gt;زه ویب‌سایټ جوړول زده کوم.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>زموږ په اړه</h2>
+          <p>د علم نړۍ موخه دا ده چې ګټور تعلیمي معلومات په ساده پښتو او عملي مثالونو وړاندې کړي.</p>
+        </div>
+        <div class="card">
+          <p>دا د پیل لپاره یو ساده تعلیمي ویب‌سایټ دی. ته کولی شې وروسته خپل درسونه، انځورونه، د ټیلیګرام چینل لینک او د اړیکې معلومات پکې اضافه کړې.</p>
+          <p class="small">یادونه: دا نمونه اوس ستا په موبایل کې د HTML فایل په توګه پرانیستل کېدای شي؛ د انټرنېټ پر عامه ویب‌سایټ بدلولو لپاره به یې وروسته آنلاین خپروو.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-box">
+        <div>
+          <h2>زده کړه همدا نن پیل کړه</h2>
+          <p>هره ورځ لږ تمرین، سبا لوی پرمختګ.</p>
+        </div>
+        <a class="btn btn-primary" href="#courses">درسونه وګوره</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> د علم نړۍ</span>
+      <span>په مینه زده کړه، په پوهه پرمختګ وکړه.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
